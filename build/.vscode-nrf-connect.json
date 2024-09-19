@@ -1,0 +1,14 @@
+{
+  "board": "xiao_ble/nrf52840",
+  "boardRevision": "",
+  "boardDir": "c:/ncs/v2.7.0/zephyr/boards/seeed/xiao_ble",
+  "shouldBuild": true,
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}
