@@ -248,8 +248,7 @@ void send_data_thread(void)
 			k_sleep(K_MSEC(NOTIFY_INTERVAL));
 		}
 		else{
-			k_sleep(K_MSEC(30000));
-			k_yield	();
+			k_sleep(K_MSEC(60000));
 		}
 	}
 }
@@ -271,8 +270,7 @@ void Ring_thread(void)
 			}
 		}
 		else {
-			k_sleep(K_MSEC(30000));
-			k_yield	();
+			k_sleep(K_MSEC(15000));
 		}
 	}
 }
