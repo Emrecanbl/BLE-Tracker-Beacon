@@ -31,7 +31,7 @@ extern "C" {
 
 /** @brief LED Characteristic UUID. */
 #define BT_UUID_LBS_MYSENSOR_VAL                                                                   \
-	BT_UUID_128_ENCODE(0x00001526, 0x1212, 0xefde, 0x1523, 0x785feabcd123)
+	BT_UUID_128_ENCODE(0x85a54e1b, 0x8b89, 0x48ff, 0xa495, 0x569283c4aab4)
 
 #define BT_UUID_LBS BT_UUID_DECLARE_128(BT_UUID_LBS_VAL)
 #define BT_UUID_LBS_BUTTON BT_UUID_DECLARE_128(BT_UUID_LBS_BUTTON_VAL)

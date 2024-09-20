@@ -45,7 +45,7 @@ static void exchange_func(struct bt_conn *conn, uint8_t att_err,struct bt_gatt_e
 
 #define RUN_LED_BLINK_INTERVAL 1000
 #define RUN_RING_BLINK_INTERVAL 100
-#define NOTIFY_INTERVAL 1000
+#define NOTIFY_INTERVAL 60000
 static bool app_button_state;
 static struct bt_conn_cb conn_callbacks;
 
@@ -75,7 +75,7 @@ void battery_sample_timer_handler(struct k_timer *timer)
         }
 
         /*Calculate and print voltage */
-        battery_voltage = ((600*6) * sample) / ((1<<12));
+        battery_voltage = ((600*8) * sample) / ((1<<12));
 
         //printk("SAADC sample: %d\n", sample);
         //printk("Battery Voltage: %d mV\n", battery_voltage);
@@ -241,11 +241,14 @@ void send_data_thread(void)
 		if (bluetooth_connected) {
 			/* Send notification, the function sends notifications only if a client is subscribed */
 			// printk("\n send_data_thread Running");
+			uint32_t battery_voltage_Percentece = (uint32_t)((battery_voltage/4200)*100);
+			if (battery_voltage_Percentece >=100){battery_voltage_Percentece=99;}
+			//printk("Battery Percentece: %d \n", battery_voltage_Percentece);
 			my_lbs_send_sensor_notify(battery_voltage);
 			k_sleep(K_MSEC(NOTIFY_INTERVAL));
 		}
 		else{
-			k_sleep(K_MSEC(10));
+			k_sleep(K_MSEC(30000));
 			k_yield	();
 		}
 	}
@@ -268,19 +271,11 @@ void Ring_thread(void)
 			}
 		}
 		else {
-			k_sleep(K_MSEC(10));
+			k_sleep(K_MSEC(30000));
 			k_yield	();
 		}
 	}
 }
-void Wait_thread(void)
-{	
-	while (1) {
-		// printk("\n Wait_thread Running");
-		k_sleep(K_MSEC(RUN_LED_BLINK_INTERVAL));
-		}
-	}
-
 /*Send indication on a button press */
 static void button_changed(uint32_t button_state, uint32_t has_changed)
 {
@@ -436,7 +431,5 @@ int main(void)
 		}
 	dk_set_led(USER_RING,1);
 }
-
 K_THREAD_DEFINE(send_data_thread_id, STACKSIZE, send_data_thread, NULL, NULL, NULL, PRIORITY, 0, 0);
 K_THREAD_DEFINE(Ring_thread_id, STACKSIZE, Ring_thread, NULL, NULL, NULL, PRIORITY, 0, 0);
-K_THREAD_DEFINE(Wait_thread_id, STACKSIZE, Wait_thread, NULL, NULL, NULL, PRIORITY, 0, 0);
