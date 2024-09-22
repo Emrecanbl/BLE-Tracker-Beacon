@@ -1,4 +1,4 @@
- BLE Tracker Beacon
+#BLE Tracker Beacon
 
 ## Project Overview
 This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on the nRF52840 SoC, designed to control a buzzer and provide status feedback through two RGB LEDs. The device includes:
@@ -77,9 +77,11 @@ Custom UUIDs are used for buzzer control, button interaction, and battery level 
 - **Battery Monitoring:** Battery levels are periodically sent via BLE notifications.
 - **Find My Phone Feature:** If implemented in the mobile app, pressing the button sends a signal to trigger a phone alarm.
 - **Power-Saving Mode:** The device enters a low-power state when not connected to a BLE device.
-![Sample](https://github.com/Emrecanbl/BLE-Tracker-Beacon/blob/main/IMG_1.jpg?raw=true)
-## Getting Started
 
+  
+![Sample](https://github.com/Emrecanbl/BLE-Tracker-Beacon/blob/main/IMG_1.jpg?raw=true)
+
+## Getting Started
 ### Clone the Repository
 ```bash
 git clone https://github.com/yourusername/ble-keychain.git
