@@ -12,7 +12,9 @@ This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on 
 - Multithreading with Zephyr RTOS
 - Power-saving techniques using real-time task management
 - Embedded system design, including hardware-software integration
+  
 ![Sample](https://github.com/Emrecanbl/BLE-Tracker-Beacon/blob/main/IMG_2.jpg?raw=true)
+
 ## Features
 
 ### BLE Output Control Service
