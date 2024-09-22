@@ -1,7 +1,7 @@
 #BLE Tracker Beacon
 
 ## Project Overview
-This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on the nRF52840 SoC, designed to control a buzzer and provide status feedback through two RGB LEDs. The device includes:
+This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on the nRF52840 SoC, designed to control a buzzer and provide status feedback through RGB LEDs. The device includes:
 
 - A BLE service to control a buzzer, enabling the Find My Item feature.
 - A button service that can be extended to implement a Find My Phone feature.
