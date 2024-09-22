@@ -45,7 +45,7 @@ The system is managed with two threads:
 ## Hardware Setup
 - **nRF52840 SoC**
 - **Buzzer:** Connected for audible alerts and the Find My Item feature.
-- **Two RGB LEDs:** For status feedback (not user-controlled).
+- **RGB LEDs:** For status feedback (not user-controlled).
 - **Button:** For user interaction.
 - **ADC:** For battery level monitoring.
 
