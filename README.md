@@ -38,10 +38,9 @@ This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on 
 - **Mechanism:** The system employs a Wait_thread that suspends other tasks when no Bluetooth connection is active to conserve power.
 
 ### Multithreading
-The system is managed with three threads:
+The system is managed with two threads:
 1. **send_data_thread:** Periodically sends battery data via BLE notifications.
 2. **ring_thread:** Manages LED blinking patterns based on connection status.
-3. **wait_thread:** Handles idle waiting and power-saving when there is no active Bluetooth connection.
 
 ## Hardware Setup
 - **nRF52840 SoC**
