@@ -35,7 +35,10 @@ This project demonstrates a Bluetooth Low Energy (BLE) keychain device based on 
 - **Failure State:** Both the buzzer and LEDs remain active if Bluetooth initialization fails.
 
 ### Power-Saving Mode
-- **Mechanism:** The system employs a Wait_thread that suspends other tasks when no Bluetooth connection is active to conserve power.
+- **When the k_sleep call is made, the Zephyr RTOS automatically performs the following steps:
+- Task Wait: The task that is put to sleep with k_sleep causes the processor to be idle.
+- Idle Cycle: Zephyr's idle cycle begins. The idle cycle determines which power mode the processor will be in during the idle period.
+- Low Power Mode: During the idle cycle, Zephyr puts the processor into the appropriate low power mode (for example, Sleep Mode or Deep Sleep Mode), depending on the configuration.
 
 ### Multithreading
 The system is managed with two threads:
